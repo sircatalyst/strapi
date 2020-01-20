@@ -1,0 +1,26 @@
+{
+  "info": {
+    "name": "Todo"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Done": {
+      "type": "boolean"
+    },
+    "created": {
+      "type": "datetime"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  },
+  "connection": "default",
+  "collectionName": "todos"
+}

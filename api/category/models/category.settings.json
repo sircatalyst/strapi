@@ -1,0 +1,32 @@
+{
+  "connection": "default",
+  "collectionName": "categories",
+  "info": {
+    "name": "category"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "restuarants": {
+      "via": "categories",
+      "collection": "restuarant",
+      "dominant": true
+    },
+    "restaurant_hours": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hour.hours-of-operation",
+      "required": true
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}

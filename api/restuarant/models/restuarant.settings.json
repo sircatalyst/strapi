@@ -1,0 +1,40 @@
+{
+  "connection": "default",
+  "collectionName": "restuarants",
+  "info": {
+    "name": "restuarant"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    },
+    "categories": {
+      "collection": "category",
+      "via": "restuarants"
+    },
+    "restaurant_hours": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hour.hours-of-operation",
+      "required": true
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}
